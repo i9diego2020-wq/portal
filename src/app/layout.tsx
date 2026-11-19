@@ -16,12 +16,15 @@ const plusJakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Portal Info BR — Jornalismo, Análises e Conhecimento Estratégico",
-  description: "Portal independente com publicação diária de análises e artigos aprofundados sobre tecnologia, economia, saúde, turismo, educação e sociedade.",
+  title: {
+    template: "%s | Peter Port Solucoes Digitais — Portal Info BR",
+    default: "Portal Info BR | Peter Port Solucoes Digitais — Jornalismo e Conhecimento Estratégico",
+  },
+  description: "Portal independente com publicação diária de análises e artigos aprofundados sobre tecnologia, economia, saúde, turismo, educação e sociedade. Peter Port Solucoes Digitais.",
   metadataBase: new URL("https://portalinfobr.cc"),
   openGraph: {
-    title: "Portal Info BR — Conhecimento e Notícias",
-    description: "Análises aprofundadas e artigos diários sobre tecnologia, finanças, saúde e bem-estar.",
+    title: "Portal Info BR | Peter Port Solucoes Digitais",
+    description: "Análises aprofundadas e artigos diários sobre tecnologia, finanças, saúde e bem-estar. Peter Port Solucoes Digitais.",
     url: "https://portalinfobr.cc",
     siteName: "Portal Info BR",
     locale: "pt_BR",

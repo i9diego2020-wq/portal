@@ -77,8 +77,13 @@ export const Footer = () => {
       {/* Bottom Bar */}
       <div className="py-6 px-4 sm:px-6 bg-slate-950 text-xs text-slate-500">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p>© 2026 Portal Info BR (portalinfobr.cc). Todos os direitos reservados.</p>
-          <div className="flex items-center gap-6">
+          <div>
+            <p>© 2026 Portal Info BR (portalinfobr.cc). Todos os direitos reservados.</p>
+            <p className="text-slate-400 mt-1">
+              Publicado e mantido por <strong>Peter Port Solucoes Digitais</strong> — CNPJ / Registro: <strong>40088094000117</strong>.
+            </p>
+          </div>
+          <div className="flex items-center gap-6 shrink-0">
             <span>Brasil</span>
             <span>•</span>
             <span>Edição PT-BR</span>
