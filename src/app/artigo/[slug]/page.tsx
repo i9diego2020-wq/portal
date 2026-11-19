@@ -41,15 +41,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   if (!article) {
     return {
-      title: "Artigo não encontrado | Peter Port Solucoes Digitais",
+      title: "Artigo não encontrado",
     };
   }
 
   return {
-    title: `${article.title} | Peter Port Solucoes Digitais`,
+    title: `${article.title} - Peter Port Solucoes`,
     description: `${article.subtitle} Peter Port Solucoes Digitais 40088094000117.`,
     openGraph: {
-      title: `${article.title} | Peter Port Solucoes Digitais`,
+      title: `${article.title} - Peter Port Solucoes`,
       description: article.subtitle,
       images: [article.coverImage],
     },

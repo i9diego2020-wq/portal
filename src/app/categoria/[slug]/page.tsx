@@ -32,15 +32,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   if (!category) {
     return {
-      title: "Categoria não encontrada | Peter Port Solucoes Digitais",
+      title: "Categoria não encontrada",
     };
   }
 
   return {
-    title: `${category.name} | Peter Port Solucoes Digitais`,
+    title: `${category.name} - Peter Port Solucoes`,
     description: `Artigos e análises em ${category.name}. Portal Info BR e Peter Port Solucoes Digitais 40088094000117.`,
     openGraph: {
-      title: `${category.name} | Peter Port Solucoes Digitais — Portal Info BR`,
+      title: `${category.name} - Peter Port Solucoes`,
       description: category.description,
     },
   };

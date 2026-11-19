@@ -5,7 +5,7 @@ import { Footer } from "@/components/ui/Footer";
 import { Shield, ChevronRight } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Política de Privacidade | Peter Port Solucoes Digitais",
+  title: "Política de Privacidade - Peter Port Solucoes",
   description: "Política de Privacidade e Proteção de Dados do Portal Info BR e Peter Port Solucoes Digitais 40088094000117.",
 };
 

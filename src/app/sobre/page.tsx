@@ -5,7 +5,7 @@ import { Footer } from "@/components/ui/Footer";
 import { Shield, Target, BookOpen, Award, CheckCircle2, ChevronRight } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Sobre Nós | Peter Port Solucoes Digitais",
+  title: "Sobre Nós - Peter Port Solucoes",
   description: "Conheça o Portal Info BR e a equipe editorial da Peter Port Solucoes Digitais 40088094000117.",
 };
 

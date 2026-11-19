@@ -5,7 +5,7 @@ import { Footer } from "@/components/ui/Footer";
 import { FileText, ChevronRight } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Termos de Uso | Peter Port Solucoes Digitais",
+  title: "Termos de Uso - Peter Port Solucoes",
   description: "Termos e Condições de Uso do Portal Info BR e Peter Port Solucoes Digitais 40088094000117.",
 };
 

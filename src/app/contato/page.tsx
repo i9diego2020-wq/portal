@@ -5,7 +5,7 @@ import { Footer } from "@/components/ui/Footer";
 import { Mail, Phone, MapPin, Send, ChevronRight, Clock } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Contato e Redação | Peter Port Solucoes Digitais",
+  title: "Contato e Redação - Peter Port Solucoes",
   description: "Fale com a equipe do Portal Info BR e Peter Port Solucoes Digitais 40088094000117.",
 };
 
