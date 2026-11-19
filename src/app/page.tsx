@@ -1,69 +1,172 @@
-import Image from "next/image";
+import Link from "next/link";
+import { Header } from "@/components/ui/Header";
+import { Footer } from "@/components/ui/Footer";
+import { FeaturedHero } from "@/components/ui/FeaturedHero";
+import { ArticleCard } from "@/components/ui/ArticleCard";
+import {
+  DEMO_FEATURED_ARTICLE,
+  DEMO_LATEST_ARTICLES,
+  DEMO_POPULAR_ARTICLES,
+  DEMO_CATEGORIES,
+} from "@/lib/demo-data";
+import { Flame, Compass, ArrowRight, Layers, Info } from "lucide-react";
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <div className="min-h-screen flex flex-col bg-white text-slate-900">
+      <Header />
+
+      {/* Main Content Container */}
+      <main className="flex-1 max-w-7xl mx-auto px-4 sm:px-6 py-8 w-full">
+        {/* Editorial Notice Banner (Aviso demonstrativo da Etapa 1) */}
+        <div className="mb-8 rounded-xl bg-sky-50 border border-sky-200/80 p-4 flex items-start sm:items-center justify-between gap-4 text-xs text-sky-950">
+          <div className="flex items-center gap-3">
+            <span className="p-1.5 rounded-lg bg-sky-600 text-white shrink-0">
+              <Info className="w-4 h-4" />
+            </span>
+            <p>
+              <strong className="font-semibold">Etapa 1 em execução:</strong> Esta é a identidade visual e interface oficial do <strong>Portal Info BR</strong>. Os artigos exibidos abaixo são demonstrativos para homologação do layout e tipografia.
+            </p>
+          </div>
+          <span className="shrink-0 bg-white border border-sky-300 text-sky-800 font-mono px-2.5 py-1 rounded text-[11px] font-semibold">
+            v0.1.0 Design Preview
+          </span>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+
+        {/* 1. ARTIGO PRINCIPAL EM DESTAQUE */}
+        <FeaturedHero article={DEMO_FEATURED_ARTICLE} />
+
+        {/* 2. GRID PRINCIPAL: ÚLTIMAS MATÉRIAS + MAIS LIDAS */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-16">
+          {/* Coluna Esquerda: Últimos Artigos (8 cols) */}
+          <section className="lg:col-span-8">
+            <div className="flex items-center justify-between mb-6 pb-2 border-b-2 border-slate-900">
+              <div className="flex items-center gap-2">
+                <span className="w-2.5 h-2.5 rounded-full bg-sky-600"></span>
+                <h2 className="font-serif text-xl sm:text-2xl font-black uppercase tracking-tight text-slate-900">
+                  Últimas Publicações
+                </h2>
+              </div>
+              <span className="text-xs font-semibold text-slate-500 uppercase tracking-wider">
+                Atualização Contínua
+              </span>
+            </div>
+
+            <div className="space-y-4">
+              {DEMO_LATEST_ARTICLES.map((article) => (
+                <ArticleCard
+                  key={article.id}
+                  article={article}
+                  variant="horizontal"
+                />
+              ))}
+            </div>
+          </section>
+
+          {/* Coluna Direita: Artigos Populares / Ranking (4 cols) */}
+          <aside className="lg:col-span-4">
+            <div className="bg-slate-50 border border-slate-200/80 rounded-2xl p-6 sticky top-24">
+              <div className="flex items-center gap-2 mb-6 pb-2 border-b border-slate-200">
+                <Flame className="w-5 h-5 text-amber-500" />
+                <h3 className="font-serif font-black text-lg text-slate-900 uppercase tracking-tight">
+                  Mais Lidas
+                </h3>
+              </div>
+
+              <div className="space-y-4">
+                {DEMO_POPULAR_ARTICLES.map((article, idx) => (
+                  <ArticleCard
+                    key={article.id}
+                    article={article}
+                    variant="popular"
+                    index={idx}
+                  />
+                ))}
+              </div>
+
+              {/* Newsletter / Assinatura de Notificações */}
+              <div className="mt-8 pt-6 border-t border-slate-200">
+                <h4 className="font-bold text-slate-900 text-sm mb-1">
+                  Radar Editorial Diário
+                </h4>
+                <p className="text-xs text-slate-600 mb-3 leading-relaxed">
+                  Receba diretamente em seu e-mail o resumo analítico dos temas que moldam o Brasil e o mundo.
+                </p>
+                <form action="/newsletter" method="POST" className="space-y-2">
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="Seu melhor e-mail"
+                    className="w-full bg-white border border-slate-300 rounded-lg px-3 py-2 text-xs text-slate-900 focus:outline-none focus:ring-2 focus:ring-sky-600"
+                  />
+                  <button
+                    type="submit"
+                    className="w-full bg-slate-900 hover:bg-slate-800 text-white font-medium text-xs py-2 rounded-lg transition-colors cursor-pointer"
+                  >
+                    Inscrever-se gratuitamente
+                  </button>
+                </form>
+              </div>
+            </div>
+          </aside>
         </div>
+
+        {/* 3. BLOCOS POR CATEGORIA / EXPLORAÇÃO TEMÁTICA */}
+        <section className="mb-16">
+          <div className="flex items-center justify-between mb-8 pb-2 border-b-2 border-slate-900">
+            <div className="flex items-center gap-2">
+              <Layers className="w-5 h-5 text-sky-600" />
+              <h2 className="font-serif text-xl sm:text-2xl font-black uppercase tracking-tight text-slate-900">
+                Explorar por Editoria
+              </h2>
+            </div>
+            <Link
+              href="/categoria/tecnologia-e-ia"
+              className="text-xs font-semibold text-sky-600 hover:text-sky-800 flex items-center gap-1"
+            >
+              Ver todas as categorias
+              <ArrowRight className="w-3.5 h-3.5" />
+            </Link>
+          </div>
+
+          {/* Cards em Grid 4 colunas */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {DEMO_LATEST_ARTICLES.slice(0, 4).map((art) => (
+              <ArticleCard key={`grid-${art.id}`} article={art} variant="standard" />
+            ))}
+          </div>
+        </section>
+
+        {/* 4. SELETOR RÁPIDO DE TEMAS / PILLS */}
+        <section className="bg-slate-900 rounded-2xl p-8 sm:p-10 text-white mb-12">
+          <div className="max-w-3xl">
+            <div className="flex items-center gap-2 text-sky-400 text-xs font-semibold uppercase tracking-wider mb-2">
+              <Compass className="w-4 h-4" />
+              <span>Painel de Assuntos</span>
+            </div>
+            <h3 className="font-serif font-bold text-2xl sm:text-3xl tracking-tight mb-3">
+              Cobertura editorial multidisciplinar e contínua
+            </h3>
+            <p className="text-slate-300 text-sm leading-relaxed mb-6">
+              Nossa redação digital acompanha áreas estratégicas do conhecimento para produzir análises precisas, sem redundâncias e com alta profundidade informativa.
+            </p>
+          </div>
+
+          <div className="flex flex-wrap gap-2.5">
+            {DEMO_CATEGORIES.map((cat) => (
+              <Link
+                key={cat.id}
+                href={`/categoria/${cat.slug}`}
+                className="bg-slate-800 hover:bg-sky-600 hover:text-white border border-slate-700 text-slate-200 text-xs font-medium px-4 py-2 rounded-full transition-all"
+              >
+                {cat.name}
+              </Link>
+            ))}
+          </div>
+        </section>
       </main>
+
+      <Footer />
     </div>
   );
 }
