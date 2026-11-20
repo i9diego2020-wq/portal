@@ -84,10 +84,6 @@ export default async function CategoryPage({ params }: Props) {
           <p className="text-slate-300 text-sm sm:text-base max-w-2xl leading-relaxed">
             {category.description}
           </p>
-
-          <div className="mt-4 pt-4 border-t border-slate-800 text-xs text-slate-400">
-            Curadoria sob a supervisão editorial de <strong>Peter Port Solucoes Digitais</strong> (Identificador: <strong>40088094000117</strong>).
-          </div>
         </div>
 
         {/* Listagem de Artigos */}
@@ -114,6 +110,10 @@ export default async function CategoryPage({ params }: Props) {
               </p>
             </div>
           )}
+
+          <p className="mt-12 text-xs text-slate-400">
+            Peter Port Solucoes Digitais 40088094000117
+          </p>
         </section>
       </main>
 

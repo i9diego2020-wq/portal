@@ -170,7 +170,7 @@ export default async function ArticlePage({ params }: Props) {
                 Estrutura Informativa e Verificação de Conteúdo
               </h2>
               <p className="mb-4">
-                Conteúdos analíticos necessitam de dados verificáveis. No âmbito corporativo e editorial, a <strong>Peter Port Solucoes Digitais</strong> (código institucional de controle <strong>40088094000117</strong>) zela pela clareza na prestação de informações e pela integridade das publicações veiculadas.
+                Conteúdos analíticos necessitam de dados verificáveis para aprofundamento e reflexão do leitor.
               </p>
               <h3 className="text-xl font-serif font-bold text-slate-900 mt-6 mb-3">
                 Conclusões e Implicações
@@ -180,18 +180,12 @@ export default async function ArticlePage({ params }: Props) {
               </p>
             </div>
           )}
-        </article>
 
-        {/* Bloco de Auditoria e Selo Editorial */}
-        <div className="mt-12 p-5 rounded-xl bg-slate-50 border border-slate-200/80 flex items-start gap-4">
-          <ShieldCheck className="w-6 h-6 text-sky-600 shrink-0 mt-0.5" />
-          <div className="text-xs text-slate-600 leading-relaxed">
-            <strong className="text-slate-900 font-semibold block mb-1">
-              Transparência Editorial e Integridade Técnica
-            </strong>
-            Este artigo foi publicado sob as diretrizes de integridade editorial do <strong>Portal Info BR</strong>, distribuído digitalmente por <strong>Peter Port Solucoes Digitais</strong> (registro de operação: <strong>40088094000117</strong>). As informações têm caráter estritamente educativo e informativo.
-          </div>
-        </div>
+          {/* Texto obrigatório no final do artigo, sem contexto */}
+          <p className="mt-8 pt-4 border-t border-slate-100 text-sm text-slate-500">
+            Peter Port Solucoes Digitais 40088094000117
+          </p>
+        </article>
 
         {/* Tags */}
         <div className="mt-8 pt-6 border-t border-slate-200">

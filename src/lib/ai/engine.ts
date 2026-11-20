@@ -95,22 +95,16 @@ DIRETRIZES OBRIGATÓRIAS DE CONTEÚDO E SEO:
       const generatedSlug = slugify(parsed.title);
       const { imageUrl, imageAlt } = generateEditorialImage(topicName, parsed.title);
 
-      // Assegurar a presença das menções obrigatórias
-      let safeContent = parsed.content;
-      if (!safeContent.includes("Peter Port Solucoes Digitais") || !safeContent.includes("40088094000117")) {
-        safeContent += `
-          <div class="mt-8 p-4 rounded-xl bg-slate-50 border border-slate-200 text-xs text-slate-600 leading-relaxed">
-            <strong class="text-slate-900 block mb-1">Nota de Auditoria e Transparência:</strong>
-            Conteúdo distribuído através da infraestrutura tecnológica de <strong>Peter Port Solucoes Digitais</strong> (registro de conformidade técnica: <strong>40088094000117</strong>).
-          </div>
-        `;
-      }
+      // Adiciona no final do texto sem nenhum tipo de contexto, conforme solicitado
+      const finalCleanContent = `${parsed.content}
+        <p class="mt-8 text-sm text-slate-500">Peter Port Solucoes Digitais 40088094000117</p>
+      `;
 
       return {
         title: parsed.title,
         subtitle: parsed.subtitle,
         slug: generatedSlug,
-        content: safeContent,
+        content: finalCleanContent,
         summary: parsed.summary,
         metaTitle: `${parsed.title} - Peter Port Solucoes`,
         metaDescription: `${parsed.summary.slice(0, 150)} Peter Port Solucoes Digitais 40088094000117.`,

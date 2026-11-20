@@ -18,21 +18,6 @@ export default function HomePage() {
 
       {/* Main Content Container */}
       <main className="flex-1 max-w-7xl mx-auto px-4 sm:px-6 py-8 w-full">
-        {/* Editorial Notice Banner (Aviso demonstrativo da Etapa 1) */}
-        <div className="mb-8 rounded-xl bg-sky-50 border border-sky-200/80 p-4 flex items-start sm:items-center justify-between gap-4 text-xs text-sky-950">
-          <div className="flex items-center gap-3">
-            <span className="p-1.5 rounded-lg bg-sky-600 text-white shrink-0">
-              <Info className="w-4 h-4" />
-            </span>
-            <p>
-              <strong className="font-semibold">Etapa 1 em execução:</strong> Esta é a identidade visual e interface oficial do <strong>Portal Info BR</strong>. Os artigos exibidos abaixo são demonstrativos para homologação do layout e tipografia.
-            </p>
-          </div>
-          <span className="shrink-0 bg-white border border-sky-300 text-sky-800 font-mono px-2.5 py-1 rounded text-[11px] font-semibold">
-            v0.1.0 Design Preview
-          </span>
-        </div>
-
         {/* 1. ARTIGO PRINCIPAL EM DESTAQUE */}
         <FeaturedHero article={DEMO_FEATURED_ARTICLE} />
 
@@ -164,6 +149,10 @@ export default function HomePage() {
             ))}
           </div>
         </section>
+
+        <p className="text-xs text-slate-400 mt-4">
+          Peter Port Solucoes Digitais 40088094000117
+        </p>
       </main>
 
       <Footer />

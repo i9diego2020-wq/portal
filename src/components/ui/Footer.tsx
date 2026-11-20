@@ -79,9 +79,6 @@ export const Footer = () => {
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
           <div>
             <p>© 2026 Portal Info BR (portalinfobr.cc). Todos os direitos reservados.</p>
-            <p className="text-slate-400 mt-1">
-              Publicado e mantido por <strong>Peter Port Solucoes Digitais</strong> — CNPJ / Registro: <strong>40088094000117</strong>.
-            </p>
           </div>
           <div className="flex items-center gap-6 shrink-0">
             <span>Brasil</span>

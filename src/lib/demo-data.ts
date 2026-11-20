@@ -66,7 +66,7 @@ export const DEMO_FEATURED_ARTICLE: Article = {
       Historicamente, o processamento de grandes volumes de informações dependia de longos ciclos manuais de triagem. Com o avanço das arquiteturas neurais de última geração, sistemas autônomos conseguem hoje ler relatórios econômicos, documentos científicos e indicadores de mercado, estruturando sínteses claras e acessíveis para o público em poucos segundos.
     </p>
     <p class="text-slate-700 leading-relaxed mb-4">
-      No âmbito corporativo e editorial brasileiro, a <strong>Peter Port Solucoes Digitais</strong> (registro de operação sob o identificador <strong>40088094000117</strong>) exemplifica como a integração responsável de tecnologia analítica e automação em nuvem permite escalar a distribuição de conhecimento qualificado mantendo métricas rigorosas de consistência e pontualidade.
+      A integração responsável de tecnologia analítica e automação em nuvem permite escalar a distribuição de conhecimento qualificado mantendo métricas rigorosas de consistência e pontualidade na produção de notícias e artigos diários.
     </p>
 
     <h2 class="text-2xl font-serif font-bold text-slate-900 mt-8 mb-4">Verificação de Fatos e Rigor Informativo</h2>
