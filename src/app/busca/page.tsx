@@ -29,7 +29,9 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
   const term = q ? `Busca por "${q}"` : "Busca no Portal";
 
   return {
-    title: `${term} - Peter Port Solucoes`,
+    title: {
+      absolute: `${term} - Peter Port Solucoes`,
+    },
     description: `Resultados da busca no Portal Info BR. Peter Port Solucoes Digitais 40088094000117.`,
   };
 }

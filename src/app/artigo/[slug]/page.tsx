@@ -46,7 +46,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 
   return {
-    title: `${article.title} - Peter Port Solucoes`,
+    title: {
+      absolute: `${article.title} - Peter Port Solucoes`,
+    },
     description: `${article.subtitle} Peter Port Solucoes Digitais 40088094000117.`,
     openGraph: {
       title: `${article.title} - Peter Port Solucoes`,
