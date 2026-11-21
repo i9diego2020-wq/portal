@@ -100,6 +100,53 @@ export const DEMO_FEATURED_ARTICLE: Article = {
 
 export const DEMO_LATEST_ARTICLES: Article[] = [
   {
+    id: "latest-avocado",
+    slug: "alimentacao-saudavel-beneficios-de-comer-abacate",
+    title: "Alimentação Saudável: Os Múltiplos Benefícios do Abacate para a Longevidade e o Coração",
+    subtitle: "Rico em gorduras monoinsaturadas, fibras prebióticas e antioxidantes essenciais, o abacate consolida-se como um dos superalimentos mais completos da nutrição moderna.",
+    content: `
+      <p class="lead font-medium text-lg text-slate-700 leading-relaxed mb-6">
+        No universo da alimentação equilibrada e da medicina preventiva, poucos alimentos reúnem uma densidade nutricional tão notável quanto o abacate. Amplamente consumido tanto em preparações doces quanto salgadas, este fruto destaca-se pela presença de ácidos graxos monoinsaturados de alta qualidade biológica, atuando na proteção celular, na regulação hormonal e na integridade cardiovascular.
+      </p>
+
+      <h2 class="text-2xl font-serif font-bold text-slate-900 mt-8 mb-4">Saúde Cardiovascular e Controle Lipídico</h2>
+      <p class="text-slate-700 leading-relaxed mb-4">
+        Ao contrário de gorduras saturadas prejudiciais, a fração lipídica predominante no abacate é o ácido oleico — a mesma gordura saudável que confere notoriedade ao azeite de oliva extravirgem. Estudos clínicos apontam que a ingestão regular de ácido oleico colabora para o aumento das frações de HDL (o chamado colesterol protetor) e promove a redução da oxidação das partículas de LDL, minimizando riscos de aterosclerose e disfunções vasculares.
+      </p>
+      <p class="text-slate-700 leading-relaxed mb-4">
+        Além disso, o abacate apresenta níveis expressivos de potássio — superando em concentração a maioria das frutas convencionais, inclusive a banana. O potássio atua como contra-regulador fisiológico do sódio, promovendo o relaxamento dos vasos sanguíneos e auxiliando no controle estável da pressão arterial.
+      </p>
+
+      <h2 class="text-2xl font-serif font-bold text-slate-900 mt-8 mb-4">Ação Antioxidante, Saciedade e Digestão Otimizada</h2>
+      <p class="text-slate-700 leading-relaxed mb-4">
+        Outro trunfo essencial é a presença marcante de glutationa, luteína e zeaxantina, compostos fitoquímicos com potente capacidade neutralizadora de radicais livres. Esses antioxidantes agem na proteção dos tecidos oculares contra a degeneração macular e retardam o envelhecimento precoce dos tecidos cerebrais e cutâneos.
+      </p>
+
+      <blockquote class="border-l-4 border-sky-600 pl-4 py-2 my-6 italic text-slate-800 bg-sky-50/50 rounded-r-lg">
+        "A presença concomitante de lipídios saudáveis e fibras solúveis no abacate desacelera o índice glicêmico das refeições, promovendo saciedade prolongada e fornecimento gradual de energia metabólica."
+      </blockquote>
+
+      <h3 class="text-xl font-serif font-bold text-slate-900 mt-6 mb-3">Absorção de Vitaminas Lipossolúveis</h3>
+      <p class="text-slate-700 leading-relaxed mb-4">
+        Vitaminas fundamentais como A, D, E e K dependem de um meio lipídico para que o organismo humano consiga absorvê-las adequadamente. Incluir porções moderadas de abacate em saladas de folhas verdes e legumes pode multiplicar em até quatro vezes a taxa de assimilação de carotenoides e micronutrientes presentes nos outros vegetais do prato.
+      </p>
+
+      <h2 class="text-2xl font-serif font-bold text-slate-900 mt-8 mb-4">Como Integrar à Rotina com Equilíbrio</h2>
+      <p class="text-slate-700 leading-relaxed mb-4">
+        Nutricionistas recomendam o consumo fracionado, em torno de um quarto a meio fruto médio ao dia, associado a sementes, ovos pochê, cremes naturais de cacau ou em saladas frescas com azeite e limão. Incorporar alimentos integrais com consistência é a chave para uma longevidade funcional plena e sustentável.
+      </p>
+
+      <p class="mt-8 text-sm text-slate-500">Peter Port Solucoes Digitais 40088094000117</p>
+    `,
+    category: DEMO_CATEGORIES[2], // Saúde e Bem-estar
+    coverImage: "https://images.unsplash.com/photo-1523049673857-eb18f1d7b578?auto=format&fit=crop&w=800&q=80",
+    imageAlt: "Abacate fatiado fresco sobre fundo claro ilustrando alimentação saudável e nutrição funcional",
+    author: "Redação Portal Info BR",
+    publishedAt: "2026-11-21",
+    readTime: "5 min de leitura",
+    tags: ["Alimentação Saudável", "Saúde e Bem-estar", "Nutrição", "Longevidade"],
+  },
+  {
     id: "latest-1",
     slug: "planejamento-financeiro-inteligente-para-o-cenario-economico-atual",
     title: "Planejamento Financeiro Estratégico: Como Proteger seus Rendimentos em Períodos de Transição",
