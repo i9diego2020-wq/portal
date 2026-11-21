@@ -38,7 +38,7 @@ export async function generateArticleWithGemini(
   recentArticlesTitles: string[] = []
 ): Promise<GeneratedArticle> {
   const apiKey = process.env.GEMINI_API_KEY;
-  const modelName = process.env.GEMINI_MODEL || "gemini-1.5-pro";
+  const modelName = process.env.GEMINI_MODEL || "gemini-3.5-flash";
 
   // Pesquisar informações da web
   const searchResults = await searchWebInformation(topicName);
@@ -90,7 +90,14 @@ DIRETRIZES OBRIGATÓRIAS DE CONTEÚDO E SEO:
       });
 
       const responseText = response.text || "";
-      const parsed = JSON.parse(responseText);
+      let cleanJsonText = responseText.trim();
+      if (cleanJsonText.startsWith("```json")) {
+        cleanJsonText = cleanJsonText.replace(/^```json/, "").replace(/```$/, "").trim();
+      } else if (cleanJsonText.startsWith("```")) {
+        cleanJsonText = cleanJsonText.replace(/^```/, "").replace(/```$/, "").trim();
+      }
+
+      const parsed = JSON.parse(cleanJsonText);
 
       const generatedSlug = slugify(parsed.title);
       const { imageUrl, imageAlt } = generateEditorialImage(topicName, parsed.title);
