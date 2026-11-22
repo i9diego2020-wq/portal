@@ -3,15 +3,18 @@ import { Header } from "@/components/ui/Header";
 import { Footer } from "@/components/ui/Footer";
 import { FeaturedHero } from "@/components/ui/FeaturedHero";
 import { ArticleCard } from "@/components/ui/ArticleCard";
-import {
-  DEMO_FEATURED_ARTICLE,
-  DEMO_LATEST_ARTICLES,
-  DEMO_POPULAR_ARTICLES,
-  DEMO_CATEGORIES,
-} from "@/lib/demo-data";
+import { getAllArticles } from "@/lib/articles";
+import { DEMO_CATEGORIES } from "@/lib/demo-data";
 import { Flame, Compass, ArrowRight, Layers, Info } from "lucide-react";
 
-export default function HomePage() {
+export const dynamic = "force-dynamic";
+
+export default async function HomePage() {
+  const articles = await getAllArticles();
+  const featured = articles[0];
+  const latestArticles = articles.slice(1, 6);
+  const popularArticles = articles.slice(2, 6);
+
   return (
     <div className="min-h-screen flex flex-col bg-white text-slate-900">
       <Header />
@@ -19,7 +22,7 @@ export default function HomePage() {
       {/* Main Content Container */}
       <main className="flex-1 max-w-7xl mx-auto px-4 sm:px-6 py-8 w-full">
         {/* 1. ARTIGO PRINCIPAL EM DESTAQUE */}
-        <FeaturedHero article={DEMO_FEATURED_ARTICLE} />
+        <FeaturedHero article={featured} />
 
         {/* 2. GRID PRINCIPAL: ÚLTIMAS MATÉRIAS + MAIS LIDAS */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-16">
@@ -38,7 +41,7 @@ export default function HomePage() {
             </div>
 
             <div className="space-y-4">
-              {DEMO_LATEST_ARTICLES.map((article) => (
+              {latestArticles.map((article) => (
                 <ArticleCard
                   key={article.id}
                   article={article}
@@ -59,7 +62,7 @@ export default function HomePage() {
               </div>
 
               <div className="space-y-4">
-                {DEMO_POPULAR_ARTICLES.map((article, idx) => (
+                {popularArticles.map((article, idx) => (
                   <ArticleCard
                     key={article.id}
                     article={article}
@@ -116,7 +119,7 @@ export default function HomePage() {
 
           {/* Cards em Grid 4 colunas */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {DEMO_LATEST_ARTICLES.slice(0, 4).map((art) => (
+            {latestArticles.slice(0, 4).map((art) => (
               <ArticleCard key={`grid-${art.id}`} article={art} variant="standard" />
             ))}
           </div>

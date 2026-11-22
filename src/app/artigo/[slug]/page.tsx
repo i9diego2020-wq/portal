@@ -4,12 +4,7 @@ import Link from "next/link";
 import { Header } from "@/components/ui/Header";
 import { Footer } from "@/components/ui/Footer";
 import { ArticleCard } from "@/components/ui/ArticleCard";
-import {
-  DEMO_CATEGORIES,
-  DEMO_FEATURED_ARTICLE,
-  DEMO_LATEST_ARTICLES,
-  DEMO_POPULAR_ARTICLES,
-} from "@/lib/demo-data";
+import { getAllArticles } from "@/lib/articles";
 import {
   Calendar,
   Clock,
@@ -29,15 +24,10 @@ interface Props {
   }>;
 }
 
-const ALL_ARTICLES = [
-  DEMO_FEATURED_ARTICLE,
-  ...DEMO_LATEST_ARTICLES,
-  ...DEMO_POPULAR_ARTICLES,
-];
-
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const article = ALL_ARTICLES.find((a) => a.slug === slug);
+  const allArticles = await getAllArticles();
+  const article = allArticles.find((a) => a.slug === slug);
 
   if (!article) {
     return {
@@ -60,20 +50,21 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function ArticlePage({ params }: Props) {
   const { slug } = await params;
-  const article = ALL_ARTICLES.find((a) => a.slug === slug);
+  const allArticles = await getAllArticles();
+  const article = allArticles.find((a) => a.slug === slug);
 
   if (!article) {
     notFound();
   }
 
-  const relatedArticles = ALL_ARTICLES.filter(
+  const relatedArticles = allArticles.filter(
     (a) => a.id !== article.id && a.category.slug === article.category.slug
   ).slice(0, 3);
 
   const fallbackRelated =
     relatedArticles.length > 0
       ? relatedArticles
-      : ALL_ARTICLES.filter((a) => a.id !== article.id).slice(0, 3);
+      : allArticles.filter((a) => a.id !== article.id).slice(0, 3);
 
   return (
     <div className="min-h-screen flex flex-col bg-white text-slate-900">

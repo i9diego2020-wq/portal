@@ -34,6 +34,43 @@ export async function GET(request: NextRequest) {
       randomCategory.name
     );
 
+    // 3. Salvar no Supabase para exibição imediata no site
+    const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+    const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+
+    if (supabaseUrl && supabaseKey) {
+      try {
+        await fetch(`${supabaseUrl}/rest/v1/articles`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "apikey": supabaseKey,
+            "Authorization": `Bearer ${supabaseKey}`,
+            "Prefer": "return=minimal"
+          },
+          body: JSON.stringify({
+            title: article.title,
+            subtitle: article.subtitle,
+            slug: article.slug,
+            content: article.content,
+            summary: article.summary,
+            category_name: randomCategory.name,
+            category_slug: randomCategory.slug,
+            cover_image: article.coverImage,
+            image_alt: article.imageAlt,
+            author: article.author,
+            read_time: article.readTime,
+            status: "published",
+            meta_title: article.metaTitle,
+            meta_description: article.metaDescription,
+            tags: article.tags
+          })
+        });
+      } catch (saveError) {
+        console.error("Erro ao persistir artigo no Supabase:", saveError);
+      }
+    }
+
     const executionTimeMs = Date.now() - startTime;
 
     // 3. Resposta de sucesso com auditoria completa
